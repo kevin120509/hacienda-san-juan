@@ -68,7 +68,7 @@ Detalles:
 - Tipo de evento: ${data.eventType}
 - Fecha estimada: ${data.date || 'No definida'}
 - Invitados: ${data.guests}
-- Áreas de interés: ${data.spaces || 'No definido'}
+- Áreas de interés: ${data.spaces || 'Aún no estoy seguro / Me gustaría asesoría'}
 
 Mis datos:
 - Nombre: ${data.name}
