@@ -8,10 +8,10 @@ export function CinematicHero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
+    { label: "Inicio", href: "/" },
     { label: "Espacios", href: "/espacios" },
     { label: "Eventos", href: "/eventos" },
     { label: "Galería", href: "/galeria" },
-    { label: "Ubicación", href: "/contacto" },
   ];
 
   return (
@@ -76,7 +76,7 @@ export function CinematicHero() {
             Agenda un recorrido
           </Link>
           <Link
-            href="/contacto"
+            href="/#ubicacion"
             className="hidden sm:flex w-10 h-10 rounded-full liquid-glass items-center justify-center text-white animate-blur-fade-up hover:text-accent transition-colors"
             style={{ animationDelay: '350ms' }}
           >
@@ -112,7 +112,7 @@ export function CinematicHero() {
           <Link href="/cotizar" className="flex-1 rounded-full liquid-glass px-4 py-2 text-sm text-white text-center flex items-center justify-center">
             Recorrido
           </Link>
-          <Link href="/contacto" className="w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-white shrink-0">
+          <Link href="/#ubicacion" className="w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-white shrink-0">
             <Map size={18} />
           </Link>
         </div>

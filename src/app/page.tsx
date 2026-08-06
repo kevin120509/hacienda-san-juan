@@ -127,7 +127,7 @@ export default function Home() {
       </Section>
 
       {/* Location Section */}
-      <Section className="bg-[#0a0e0b] text-white relative overflow-hidden border-t border-white/5">
+      <Section id="ubicacion" className="bg-[#0a0e0b] text-white relative overflow-hidden border-t border-white/5">
         <Container className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Address & CTA */}
