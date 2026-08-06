@@ -101,7 +101,7 @@ body {
 
 .vine-line {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(87,199,133,0.7), transparent);
+  background: linear-gradient(90deg, transparent, rgba(194,168,120,0.7), transparent);
 }
 
 @keyframes blurFadeUp {

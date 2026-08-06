@@ -48,8 +48,8 @@ export function CinematicHero() {
       <nav className="relative z-50 flex justify-between items-center px-4 sm:px-6 md:px-12 py-4 md:py-6 pt-[88px] md:pt-[96px]">
         {/* Left */}
         <div className="flex items-center gap-2 animate-blur-fade-up" style={{ animationDelay: '0ms' }}>
-          <Leaf size={18} className="animate-sway text-[#57c785]" />
-          <span className="font-[var(--font-ibm)] font-medium tracking-[0.3em] text-white">SAN JUAN</span>
+          <Leaf size={18} className="animate-sway text-accent" />
+          <span className="font-[var(--font-ibm)] font-medium tracking-[0.2em] text-white text-xs md:text-sm">HACIENDA SAN JUAN DE LAS FLORES</span>
         </div>
 
         {/* Center Links (hidden below lg) */}
@@ -77,7 +77,7 @@ export function CinematicHero() {
           </Link>
           <Link
             href="/contacto"
-            className="hidden sm:flex w-10 h-10 rounded-full liquid-glass items-center justify-center text-white animate-blur-fade-up hover:text-[#57c785] transition-colors"
+            className="hidden sm:flex w-10 h-10 rounded-full liquid-glass items-center justify-center text-white animate-blur-fade-up hover:text-accent transition-colors"
             style={{ animationDelay: '350ms' }}
           >
             <Map size={18} />
@@ -128,12 +128,12 @@ export function CinematicHero() {
           <span>·</span>
           <span className="uppercase tracking-[0.24em]">RODEADA DE NATURALEZA</span>
           <span>·</span>
-          <span className="uppercase tracking-[0.24em] text-[#57c785]">RESERVA AHORA</span>
+          <span className="uppercase tracking-[0.24em] text-accent">RESERVA AHORA</span>
         </div>
 
         {/* Headline */}
         <h1 className="font-[var(--font-cormorant)] text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light mb-4 md:mb-6 tracking-[-0.02em] text-white animate-blur-fade-up leading-tight" style={{ animationDelay: '400ms' }}>
-          La naturaleza <span className="italic text-[#57c785]">abraza</span> este refugio.
+          La naturaleza <span className="italic text-accent">abraza</span> este refugio.
         </h1>
 
         {/* Sub-line */}
@@ -155,7 +155,7 @@ export function CinematicHero() {
             className="rounded-full liquid-glass px-6 sm:px-8 py-2.5 sm:py-3 flex items-center justify-center text-white animate-blur-fade-up w-full sm:w-auto hover:bg-white/5 transition-colors"
             style={{ animationDelay: '700ms' }}
           >
-            <Download size={18} className="mr-2 text-[#57c785]" /> Descargar folleto
+            Cotizar evento <ArrowRight size={18} className="ml-2 text-accent" />
           </Link>
         </div>
       </div>
