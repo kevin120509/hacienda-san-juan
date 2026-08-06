@@ -5,41 +5,12 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { MotionFadeIn } from "@/components/animations/motion-fade-in";
 import { ArrowRight, MapPin, CheckCircle, Star, StarHalf } from "lucide-react";
+import { CinematicHero } from "@/components/ui/cinematic-hero";
 
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative h-[90vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/40 z-10" />
-        <Image 
-          src="/images/hacienda_hero.png" 
-          alt="Hacienda San Juan de las Flores" 
-          fill 
-          priority 
-          className="object-cover absolute inset-0 z-0" 
-        />
-        
-        <Container className="relative z-20 text-center text-white">
-          <MotionFadeIn direction="up">
-            <span className="uppercase tracking-widest text-xs md:text-sm mb-4 block text-accent">Yaxkukul, Yucatán</span>
-            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold mb-6 max-w-4xl mx-auto leading-tight">
-              Elegancia Natural para Momentos Inolvidables
-            </h1>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/90">
-              Hacienda San Juan de las Flores. El escenario perfecto donde la historia, la naturaleza y la exclusividad se encuentran.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" asChild className="w-full sm:w-auto text-base">
-                <Link href="/cotizar">Cotiza tu Evento</Link>
-              </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto text-base bg-white/10 border-white text-white hover:bg-white hover:text-primary" asChild>
-                <Link href="/contacto">Agenda un Recorrido</Link>
-              </Button>
-            </div>
-          </MotionFadeIn>
-        </Container>
-      </section>
+      <CinematicHero />
 
       {/* Intro Concept */}
       <Section className="bg-secondary/30">
@@ -155,28 +126,36 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* Google Maps Embed */}
-      <section className="w-full h-[400px] md:h-[500px] bg-secondary/20">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7446.139184929924!2d-89.42252507238666!3d21.069882517806313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f567f9544684fcd%3A0xa8e3d2c6799c75c8!2sSan%20Juan%20de%20las%20Flores!5e0!3m2!1ses-419!2smx!4v1785998967114!5m2!1ses-419!2smx" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-      </section>
-
-      {/* Trust & Location CTA */}
+      {/* Location Section */}
       <Section className="bg-primary text-primary-foreground relative overflow-hidden">
         <Container className="relative z-10">
-          <MotionFadeIn direction="up" className="max-w-3xl mx-auto text-center">
-            <MapPin className="mx-auto h-12 w-12 mb-6 text-accent" />
-            <h2 className="font-serif text-3xl md:text-5xl font-bold mb-6">Ven a Conocer la Hacienda</h2>
-            <p className="text-primary-foreground/80 text-lg mb-10 leading-relaxed">
-              La mejor manera de visualizar su evento es recorriendo nuestros espacios en persona. Agende una visita guiada y descubra la magia de San Juan de las Flores en Yaxkukul.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Address & CTA */}
+            <MotionFadeIn direction="right">
+              <MapPin className="h-12 w-12 mb-6 text-accent" />
+              <h2 className="font-serif text-3xl md:text-5xl font-bold mb-6">Ubicación</h2>
+              <div className="text-primary-foreground/80 text-lg mb-8 space-y-4">
+                <p>
+                  <strong>Hacienda San Juan de las Flores</strong><br />
+                  Calle 18 x 20,<br />
+                  Yaxkukul, Yucatán.
+                </p>
+                <p>
+                  La mejor manera de visualizar su evento es recorriendo nuestros espacios en persona. Agende una visita guiada y descubra la magia de nuestro recinto.
+                </p>
+              </div>
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto" asChild>
-                <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '529992659055'}`} target="_blank" rel="noreferrer">
+                <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '529992659055'}?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20visita%20guiada%20a%20la%20hacienda`} target="_blank" rel="noreferrer">
                   Contactar por WhatsApp
                 </a>
               </Button>
-            </div>
-          </MotionFadeIn>
+            </MotionFadeIn>
+
+            {/* Right: Map */}
+            <MotionFadeIn direction="left" className="h-[400px] md:h-[500px] w-full rounded-xl overflow-hidden shadow-2xl border border-primary-foreground/10 bg-secondary/10">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7446.139184929924!2d-89.42252507238666!3d21.069882517806313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f567f9544684fcd%3A0xa8e3d2c6799c75c8!2sSan%20Juan%20de%20las%20Flores!5e0!3m2!1ses-419!2smx!4v1785998967114!5m2!1ses-419!2smx" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            </MotionFadeIn>
+          </div>
         </Container>
       </Section>
     </>
