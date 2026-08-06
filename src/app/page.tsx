@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { MotionFadeIn } from "@/components/animations/motion-fade-in";
-import { ArrowRight, MapPin, CheckCircle } from "lucide-react";
+import { ArrowRight, MapPin, CheckCircle, Star, StarHalf } from "lucide-react";
 
 export default function Home() {
   return (
@@ -103,6 +103,47 @@ export default function Home() {
                 </div>
                 <h3 className="font-serif text-2xl font-semibold mb-3 text-primary">{event.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{event.desc}</p>
+              </MotionFadeIn>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Google Maps Testimonials */}
+      <Section className="bg-secondary/20">
+        <Container>
+          <MotionFadeIn className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <div className="flex text-yellow-500">
+                <Star className="fill-current w-6 h-6" />
+                <Star className="fill-current w-6 h-6" />
+                <Star className="fill-current w-6 h-6" />
+                <Star className="fill-current w-6 h-6" />
+                <StarHalf className="fill-current w-6 h-6" />
+              </div>
+              <span className="font-bold text-2xl text-primary">4.4</span>
+              <span className="text-muted-foreground ml-1">/ 5 (11 reseñas en Google Maps)</span>
+            </div>
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-primary">Experiencias de nuestros visitantes</h2>
+          </MotionFadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { text: "Una hacienda preciosa, ideal para bautizos, primeras comuniones y bodas.", time: "Hace un año" },
+              { text: "Excelente lugar, muy amplio y muy bonito.", time: "Hace 2 años" },
+              { text: "Excelente y Hermoso Lugar", time: "Hace 6 años" }
+            ].map((review, i) => (
+              <MotionFadeIn key={i} delay={i * 0.1} direction="up" className="bg-background p-8 rounded-xl shadow-sm border border-secondary/50 flex flex-col justify-between">
+                <div>
+                  <div className="flex text-yellow-500 mb-4 gap-1">
+                    {[1, 2, 3, 4, 5].map(star => <Star key={star} className="fill-current w-4 h-4" />)}
+                  </div>
+                  <p className="text-foreground/80 text-lg mb-6 leading-relaxed">"{review.text}"</p>
+                </div>
+                <div className="flex items-center justify-between border-t border-border/50 pt-4 mt-auto">
+                  <span className="text-sm font-semibold text-primary">Reseña de Google</span>
+                  <span className="text-xs text-muted-foreground">{review.time}</span>
+                </div>
               </MotionFadeIn>
             ))}
           </div>
