@@ -4,17 +4,17 @@
   --background: #080b09; /* Mossy near-black */
   --foreground: #FFFFFF; /* White text */
   
-  --color-primary: #121814; /* Deep dark green/black */
-  --color-primary-foreground: #FFFFFF;
+  --color-primary: #FFFFFF; /* White for headings */
+  --color-primary-foreground: #080b09; /* Dark text for primary buttons */
   
-  --color-secondary: #1a221d; /* Slightly lighter dark green */
+  --color-secondary: #121814; /* Dark section backgrounds */
   --color-secondary-foreground: #FFFFFF;
   
   --color-accent: #57c785; /* Reclaimed green */
   --color-accent-foreground: #000000;
   
-  --color-muted: #232e27;
-  --color-muted-foreground: rgba(255, 255, 255, 0.6);
+  --color-muted: #1a221d;
+  --color-muted-foreground: rgba(255, 255, 255, 0.7);
 }
 
 @theme inline {
