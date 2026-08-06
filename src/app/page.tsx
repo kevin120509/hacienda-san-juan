@@ -68,12 +68,12 @@ export default function Home() {
               { title: "XV Años", img: "/images/hacienda_terrace.png", desc: "Espacios amplios y seguros para una celebración juvenil inolvidable y llena de magia." },
               { title: "Eventos Especiales", img: "/images/hacienda_garden.png", desc: "Celebraciones sociales, empresariales y producciones con todas las facilidades necesarias." }
             ].map((event, i) => (
-              <MotionFadeIn key={i} delay={i * 0.1} direction="up" className="group cursor-pointer">
-                <div className="aspect-[3/4] bg-secondary/50 mb-6 overflow-hidden relative flex items-center justify-center transition-all group-hover:bg-primary/10 rounded-sm">
+              <MotionFadeIn key={i} delay={i * 0.1} direction="up" className="group cursor-pointer bg-white p-6 rounded-2xl shadow-xl transition-transform hover:-translate-y-2">
+                <div className="aspect-[4/3] bg-gray-100 mb-6 overflow-hidden relative flex items-center justify-center rounded-xl">
                    <Image src={event.img} alt={event.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
-                <h3 className="font-serif text-2xl font-semibold mb-3 text-primary">{event.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{event.desc}</p>
+                <h3 className="font-serif text-2xl font-semibold mb-3 text-black">{event.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{event.desc}</p>
               </MotionFadeIn>
             ))}
           </div>
@@ -98,7 +98,7 @@ export default function Home() {
             <h2 className="font-serif text-3xl md:text-5xl font-bold text-primary">Experiencias de nuestros visitantes</h2>
           </MotionFadeIn>
 
-          <div className="relative overflow-hidden w-full py-4 before:absolute before:left-0 before:top-0 before:w-12 md:before:w-24 before:h-full before:bg-gradient-to-r before:from-[#F9F8F6] before:to-transparent before:z-10 after:absolute after:right-0 after:top-0 after:w-12 md:after:w-24 after:h-full after:bg-gradient-to-l after:from-[#F9F8F6] after:to-transparent after:z-10">
+          <div className="relative overflow-hidden w-full py-4 before:absolute before:left-0 before:top-0 before:w-12 md:before:w-24 before:h-full before:bg-gradient-to-r before:from-[#080b09] before:to-transparent before:z-10 after:absolute after:right-0 after:top-0 after:w-12 md:after:w-24 after:h-full after:bg-gradient-to-l after:from-[#080b09] after:to-transparent after:z-10">
             <div className="animate-marquee gap-6 md:gap-8 px-4">
               {[
                 { text: "Una hacienda preciosa, ideal para bautizos, primeras comuniones y bodas.", time: "Hace un año" },
@@ -127,14 +127,14 @@ export default function Home() {
       </Section>
 
       {/* Location Section */}
-      <Section className="bg-primary text-primary-foreground relative overflow-hidden">
+      <Section className="bg-[#0a0e0b] text-white relative overflow-hidden border-t border-white/5">
         <Container className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Address & CTA */}
             <MotionFadeIn direction="right">
               <MapPin className="h-12 w-12 mb-6 text-accent" />
-              <h2 className="font-serif text-3xl md:text-5xl font-bold mb-6">Ubicación</h2>
-              <div className="text-primary-foreground/80 text-lg mb-8 space-y-4">
+              <h2 className="font-serif text-3xl md:text-5xl font-bold mb-6 text-white">Ubicación</h2>
+              <div className="text-white/80 text-lg mb-8 space-y-4">
                 <p>
                   <strong>Hacienda San Juan de las Flores</strong><br />
                   Calle 18 x 20,<br />
@@ -144,7 +144,7 @@ export default function Home() {
                   La mejor manera de visualizar su evento es recorriendo nuestros espacios en persona. Agende una visita guiada y descubra la magia de nuestro recinto.
                 </p>
               </div>
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto" asChild>
+              <Button size="lg" className="bg-accent text-black hover:bg-accent/90 w-full sm:w-auto" asChild>
                 <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '529992659055'}?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20visita%20guiada%20a%20la%20hacienda`} target="_blank" rel="noreferrer">
                   Contactar por WhatsApp
                 </a>
