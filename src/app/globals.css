@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F9F8F6; /* Warm off-white */
-  --foreground: #2D3748; /* Dark gray for good contrast */
+  --background: #080b09; /* Mossy near-black */
+  --foreground: #FFFFFF; /* White text */
   
-  --color-primary: #4A5D4E; /* Olive green */
+  --color-primary: #121814; /* Deep dark green/black */
   --color-primary-foreground: #FFFFFF;
   
-  --color-secondary: #E3DCCF; /* Beige/Stone */
-  --color-secondary-foreground: #2D3748;
+  --color-secondary: #1a221d; /* Slightly lighter dark green */
+  --color-secondary-foreground: #FFFFFF;
   
-  --color-accent: #C2A878; /* Soft gold/sand */
-  --color-accent-foreground: #FFFFFF;
+  --color-accent: #57c785; /* Reclaimed green */
+  --color-accent-foreground: #000000;
   
-  --color-muted: #F0EBE1;
-  --color-muted-foreground: #718096;
+  --color-muted: #232e27;
+  --color-muted-foreground: rgba(255, 255, 255, 0.6);
 }
 
 @theme inline {
@@ -101,7 +101,7 @@ body {
 
 .vine-line {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(194,168,120,0.7), transparent);
+  background: linear-gradient(90deg, transparent, rgba(87,199,133,0.7), transparent);
 }
 
 @keyframes blurFadeUp {
