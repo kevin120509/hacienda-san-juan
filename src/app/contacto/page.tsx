@@ -55,7 +55,7 @@ Mensaje: ${message}`;
             {/* Contact Info */}
             <MotionFadeIn direction="right" className="space-y-10">
               <div>
-                <h2 className="font-serif text-3xl font-bold mb-6 text-primary">Hablemos</h2>
+                <h2 className="font-serif text-3xl font-bold mb-6 text-white">Hablemos</h2>
                 <p className="text-muted-foreground mb-8">
                   Puede agendar un recorrido o consultarnos cualquier inquietud directamente a través de WhatsApp o llenando el formulario.
                 </p>
@@ -107,8 +107,8 @@ Mensaje: ${message}`;
 
             {/* Simple Form */}
             <MotionFadeIn direction="left">
-              <div className="bg-white p-8 md:p-10 shadow-sm border border-primary/10 rounded-sm">
-                <h3 className="font-serif text-2xl font-bold mb-6 text-primary">Envíenos un Mensaje</h3>
+              <div className="bg-[#121814] p-8 md:p-10 shadow-sm border border-white/10 rounded-xl">
+                <h3 className="font-serif text-2xl font-bold mb-6 text-white">Envíenos un Mensaje</h3>
                 {status === "success" ? (
                   <div className="bg-green-50 text-green-800 p-6 rounded-sm border border-green-200 text-center">
                     <h4 className="font-semibold text-lg mb-2">¡Mensaje enviado!</h4>

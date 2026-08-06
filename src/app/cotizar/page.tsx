@@ -97,11 +97,9 @@ Mis datos:
         <Container>
           <div className="max-w-2xl mx-auto">
             {isSubmitted ? (
-              <MotionFadeIn className="bg-white p-10 text-center border border-primary/10 shadow-sm rounded-sm">
-                <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                </div>
-                <h2 className="font-serif text-3xl font-bold mb-4 text-primary">¡Solicitud Recibida!</h2>
+              <MotionFadeIn className="bg-[#121814] p-10 text-center border border-white/10 shadow-sm rounded-xl">
+                <CheckCircle className="mx-auto text-accent mb-4" size={48} />
+                <h2 className="font-serif text-3xl font-bold mb-4 text-white">¡Solicitud Recibida!</h2>
                 <p className="text-muted-foreground mb-6">
                   Gracias por considerar a Hacienda San Juan de las Flores. Hemos recibido su información y nos pondremos en contacto muy pronto para brindarle una cotización personalizada.
                 </p>
@@ -113,13 +111,13 @@ Mis datos:
                 </Button>
               </MotionFadeIn>
             ) : (
-              <div className="bg-white p-6 md:p-10 border border-primary/10 shadow-sm rounded-sm">
+              <div className="bg-[#121814] p-6 md:p-10 border border-white/10 shadow-sm rounded-xl">
                 {/* Progress */}
                 <div className="mb-8">
                   <div className="flex justify-between mb-2">
                     {[1, 2, 3, 4].map((i) => (
                       <div key={i} className="flex flex-col items-center flex-1">
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors ${step >= i ? 'bg-primary text-white' : 'bg-secondary text-primary/50'}`}>
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors ${step >= i ? 'bg-accent text-black' : 'bg-black/50 text-white/50'}`}>
                           {i}
                         </div>
                       </div>
@@ -127,7 +125,7 @@ Mis datos:
                   </div>
                   <div className="h-1 bg-secondary w-full rounded-full relative">
                     <div 
-                      className="absolute top-0 left-0 h-full bg-primary transition-all duration-300"
+                      className="absolute top-0 left-0 h-full bg-accent transition-all duration-300"
                       style={{ width: `${((step - 1) / 3) * 100}%` }}
                     />
                   </div>
@@ -136,7 +134,7 @@ Mis datos:
                 <form onSubmit={handleSubmit(onSubmit)}>
                   {/* Step 1: Tipo */}
                   <div className={step === 1 ? "block" : "hidden"}>
-                    <h3 className="font-serif text-2xl font-semibold mb-6 text-primary">¿Qué tipo de evento planea?</h3>
+                    <h3 className="font-serif text-2xl font-semibold mb-6 text-white">¿Qué tipo de evento planea?</h3>
                     <div className="space-y-4">
                       <Select {...register("eventType")}>
                         <option value="" disabled>Seleccione una opción</option>
@@ -153,7 +151,7 @@ Mis datos:
 
                   {/* Step 2: Detalles */}
                   <div className={step === 2 ? "block" : "hidden"}>
-                    <h3 className="font-serif text-2xl font-semibold mb-6 text-primary">Detalles del Evento</h3>
+                    <h3 className="font-serif text-2xl font-semibold mb-6 text-white">Detalles del Evento</h3>
                     <div className="space-y-6">
                       <div>
                         <label className="block text-sm font-medium mb-2">Fecha Estimada (Opcional)</label>
@@ -175,7 +173,7 @@ Mis datos:
 
                   {/* Step 3: Espacios */}
                   <div className={step === 3 ? "block" : "hidden"}>
-                    <h3 className="font-serif text-2xl font-semibold mb-6 text-primary">Áreas de Interés</h3>
+                    <h3 className="font-serif text-2xl font-semibold mb-6 text-white">Áreas de Interés</h3>
                     <div className="space-y-4">
                       <Select {...register("spaces")}>
                         <option value="">Aún no estoy seguro / Me gustaría asesoría</option>
@@ -189,7 +187,7 @@ Mis datos:
 
                   {/* Step 4: Contacto */}
                   <div className={step === 4 ? "block" : "hidden"}>
-                    <h3 className="font-serif text-2xl font-semibold mb-6 text-primary">Sus Datos</h3>
+                    <h3 className="font-serif text-2xl font-semibold mb-6 text-white">Sus Datos</h3>
                     <div className="space-y-4">
                       <div>
                         <label className="block text-sm font-medium mb-1">Nombre completo *</label>
