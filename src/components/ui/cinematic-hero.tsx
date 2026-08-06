@@ -132,7 +132,7 @@ export function CinematicHero() {
 
         {/* Headline */}
         <h1 className="font-[var(--font-cormorant)] text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light mb-4 md:mb-6 tracking-[-0.02em] text-white animate-blur-fade-up leading-tight" style={{ animationDelay: '400ms' }}>
-          El escenario perfecto para tu <span className="italic text-accent">historia</span>.
+          El escenario <span className="text-accent">perfecto</span> para tu <span className="italic text-accent">historia</span>.
         </h1>
 
         {/* Sub-line */}

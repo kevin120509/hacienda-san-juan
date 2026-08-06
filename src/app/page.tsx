@@ -68,12 +68,12 @@ export default function Home() {
               { title: "XV Años", img: "/images/hacienda_terrace.png", desc: "Espacios amplios y seguros para una celebración juvenil inolvidable y llena de magia." },
               { title: "Eventos Especiales", img: "/images/hacienda_garden.png", desc: "Celebraciones sociales, empresariales y producciones con todas las facilidades necesarias." }
             ].map((event, i) => (
-              <MotionFadeIn key={i} delay={i * 0.1} direction="up" className="group cursor-pointer bg-white p-6 rounded-2xl shadow-xl transition-transform hover:-translate-y-2">
-                <div className="aspect-[4/3] bg-gray-100 mb-6 overflow-hidden relative flex items-center justify-center rounded-xl">
+              <MotionFadeIn key={i} delay={i * 0.1} direction="up" className="group cursor-pointer bg-[#0e1410] border border-accent/20 p-6 rounded-2xl shadow-xl transition-transform hover:-translate-y-2">
+                <div className="aspect-[4/3] bg-[#0a0e0b] mb-6 overflow-hidden relative flex items-center justify-center rounded-xl">
                    <Image src={event.img} alt={event.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
-                <h3 className="font-serif text-2xl font-semibold mb-3 text-black">{event.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{event.desc}</p>
+                <h3 className="font-serif text-2xl font-semibold mb-3 text-white">{event.title}</h3>
+                <p className="text-white/70 leading-relaxed">{event.desc}</p>
               </MotionFadeIn>
             ))}
           </div>
