@@ -1,5 +1,6 @@
 "use client";
 
+import { CheckCircle } from "lucide-react";
 import { useState } from "react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
