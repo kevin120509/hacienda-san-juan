@@ -45,7 +45,7 @@ export function CinematicHero() {
       />
 
       {/* Custom Navbar (z-index 50) */}
-      <nav className="relative z-50 flex justify-between items-center px-4 sm:px-6 md:px-12 py-4 md:py-6 pt-[88px] md:pt-[96px]">
+      <nav className="relative z-50 flex justify-between items-center px-4 sm:px-6 md:px-12 py-4 md:py-6 pt-8 md:pt-10">
         {/* Left */}
         <div className="flex items-center gap-2 animate-blur-fade-up" style={{ animationDelay: '0ms' }}>
           <Leaf size={18} className="animate-sway text-accent" />
@@ -93,9 +93,8 @@ export function CinematicHero() {
         </div>
       </nav>
 
-      {/* Mobile Menu Dropdown */}
       <div 
-        className={`lg:hidden absolute top-[136px] left-4 right-4 z-40 bg-[#080b09]/95 backdrop-blur-lg border-t border-b border-white/10 shadow-2xl rounded-lg overflow-hidden transition-all duration-500 ease-out flex flex-col ${isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0 pointer-events-none"}`}
+        className={`lg:hidden absolute top-[80px] left-4 right-4 z-40 bg-[#080b09]/95 backdrop-blur-lg border-t border-b border-white/10 shadow-2xl rounded-lg overflow-hidden transition-all duration-500 ease-out flex flex-col ${isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0 pointer-events-none"}`}
       >
         <div className="p-2 flex flex-col">
           {navLinks.map((link, idx) => (
@@ -133,7 +132,7 @@ export function CinematicHero() {
 
         {/* Headline */}
         <h1 className="font-[var(--font-cormorant)] text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light mb-4 md:mb-6 tracking-[-0.02em] text-white animate-blur-fade-up leading-tight" style={{ animationDelay: '400ms' }}>
-          La naturaleza <span className="italic text-accent">abraza</span> este refugio.
+          El escenario perfecto para tu <span className="italic text-accent">historia</span>.
         </h1>
 
         {/* Sub-line */}
