@@ -61,10 +61,23 @@ export default function CotizarPage() {
 
   const onSubmit = (data: FormData) => {
     console.log("Datos de cotización:", data);
-    // Simulación de envío
-    setTimeout(() => {
-      setIsSubmitted(true);
-    }, 1000);
+    
+    const message = `Hola, me gustaría cotizar un evento en Hacienda San Juan de las Flores.
+Detalles:
+- Tipo de evento: ${data.eventType}
+- Fecha estimada: ${data.date || 'No definida'}
+- Invitados: ${data.guests}
+- Áreas de interés: ${data.spaces || 'No definido'}
+
+Mis datos:
+- Nombre: ${data.name}
+- Email: ${data.email || 'No proporcionado'}
+- Comentarios: ${data.comments || 'Ninguno'}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '529992659055'}?text=${encodedMessage}`, "_blank");
+    
+    setIsSubmitted(true);
   };
 
   return (

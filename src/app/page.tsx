@@ -127,28 +127,38 @@ export default function Home() {
             <h2 className="font-serif text-3xl md:text-5xl font-bold text-primary">Experiencias de nuestros visitantes</h2>
           </MotionFadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { text: "Una hacienda preciosa, ideal para bautizos, primeras comuniones y bodas.", time: "Hace un año" },
-              { text: "Excelente lugar, muy amplio y muy bonito.", time: "Hace 2 años" },
-              { text: "Excelente y Hermoso Lugar", time: "Hace 6 años" }
-            ].map((review, i) => (
-              <MotionFadeIn key={i} delay={i * 0.1} direction="up" className="bg-background p-8 rounded-xl shadow-sm border border-secondary/50 flex flex-col justify-between">
-                <div>
-                  <div className="flex text-yellow-500 mb-4 gap-1">
-                    {[1, 2, 3, 4, 5].map(star => <Star key={star} className="fill-current w-4 h-4" />)}
+          <div className="relative overflow-hidden w-full py-4 before:absolute before:left-0 before:top-0 before:w-12 md:before:w-24 before:h-full before:bg-gradient-to-r before:from-[#F9F8F6] before:to-transparent before:z-10 after:absolute after:right-0 after:top-0 after:w-12 md:after:w-24 after:h-full after:bg-gradient-to-l after:from-[#F9F8F6] after:to-transparent after:z-10">
+            <div className="animate-marquee gap-6 md:gap-8 px-4">
+              {[
+                { text: "Una hacienda preciosa, ideal para bautizos, primeras comuniones y bodas.", time: "Hace un año" },
+                { text: "Excelente lugar, muy amplio y muy bonito.", time: "Hace 2 años" },
+                { text: "Excelente y Hermoso Lugar", time: "Hace 6 años" },
+                { text: "Una hacienda preciosa, ideal para bautizos, primeras comuniones y bodas.", time: "Hace un año" },
+                { text: "Excelente lugar, muy amplio y muy bonito.", time: "Hace 2 años" },
+                { text: "Excelente y Hermoso Lugar", time: "Hace 6 años" }
+              ].map((review, i) => (
+                <div key={i} className="w-[300px] md:w-[400px] shrink-0 bg-background p-6 md:p-8 rounded-xl shadow-sm border border-secondary/50 flex flex-col justify-between whitespace-normal">
+                  <div>
+                    <div className="flex text-yellow-500 mb-4 gap-1">
+                      {[1, 2, 3, 4, 5].map(star => <Star key={star} className="fill-current w-4 h-4" />)}
+                    </div>
+                    <p className="text-foreground/80 text-lg mb-6 leading-relaxed">"{review.text}"</p>
                   </div>
-                  <p className="text-foreground/80 text-lg mb-6 leading-relaxed">"{review.text}"</p>
+                  <div className="flex items-center justify-between border-t border-border/50 pt-4 mt-auto">
+                    <span className="text-sm font-semibold text-primary">Reseña de Google</span>
+                    <span className="text-xs text-muted-foreground">{review.time}</span>
+                  </div>
                 </div>
-                <div className="flex items-center justify-between border-t border-border/50 pt-4 mt-auto">
-                  <span className="text-sm font-semibold text-primary">Reseña de Google</span>
-                  <span className="text-xs text-muted-foreground">{review.time}</span>
-                </div>
-              </MotionFadeIn>
-            ))}
+              ))}
+            </div>
           </div>
         </Container>
       </Section>
+
+      {/* Google Maps Embed */}
+      <section className="w-full h-[400px] md:h-[500px] bg-secondary/20">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7446.139184929924!2d-89.42252507238666!3d21.069882517806313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f567f9544684fcd%3A0xa8e3d2c6799c75c8!2sSan%20Juan%20de%20las%20Flores!5e0!3m2!1ses-419!2smx!4v1785998967114!5m2!1ses-419!2smx" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+      </section>
 
       {/* Trust & Location CTA */}
       <Section className="bg-primary text-primary-foreground relative overflow-hidden">

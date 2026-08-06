@@ -12,13 +12,28 @@ import { useState } from "react";
 export default function ContactoPage() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("submitting");
-    // Simulando envío
-    setTimeout(() => {
-      setStatus("success");
-    }, 1500);
+    
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const phone = formData.get("phone") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    const waMessage = `Hola, me gustaría recibir más información.
+Mis datos:
+- Nombre: ${name}
+- Teléfono: ${phone}
+- Email: ${email || 'No proporcionado'}
+
+Mensaje: ${message}`;
+
+    const encodedMessage = encodeURIComponent(waMessage);
+    window.open(`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '529992659055'}?text=${encodedMessage}`, "_blank");
+    
+    setStatus("success");
   };
 
   return (
@@ -105,21 +120,21 @@ export default function ContactoPage() {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-1">Nombre completo *</label>
-                      <Input id="name" required placeholder="Ej. Ana García" />
+                      <Input id="name" name="name" required placeholder="Ej. Ana García" />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium mb-1">Teléfono *</label>
-                        <Input id="phone" type="tel" required placeholder="10 dígitos" />
+                        <Input id="phone" name="phone" type="tel" required placeholder="10 dígitos" />
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium mb-1">Correo electrónico</label>
-                        <Input id="email" type="email" placeholder="ejemplo@correo.com" />
+                        <Input id="email" name="email" type="email" placeholder="ejemplo@correo.com" />
                       </div>
                     </div>
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium mb-1">Mensaje *</label>
-                      <Textarea id="message" required placeholder="¿En qué podemos ayudarle?" className="min-h-[120px]" />
+                      <Textarea id="message" name="message" required placeholder="¿En qué podemos ayudarle?" className="min-h-[120px]" />
                     </div>
                     <Button type="submit" className="w-full" disabled={status === "submitting"}>
                       {status === "submitting" ? "Enviando..." : "Enviar Mensaje"}
