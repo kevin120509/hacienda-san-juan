@@ -4,13 +4,13 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-[#0a0e0b] text-white border-t border-white/10">
       <Container className="py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand & Intro */}
           <div className="space-y-4">
             <h3 className="font-serif text-2xl font-bold">San Juan de las Flores</h3>
-            <p className="text-primary-foreground/80 text-sm max-w-sm">
+            <p className="text-white/80 text-sm max-w-sm">
               Elegancia natural y exclusividad en el corazón de Yucatán. El escenario perfecto para celebraciones inolvidables.
             </p>
             <div className="flex space-x-4 pt-2">
@@ -38,7 +38,7 @@ export function Footer() {
           {/* Quick Links */}
           <div className="space-y-4">
             <h4 className="font-semibold text-lg">Explorar</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/80">
+            <ul className="space-y-2 text-sm text-white/80">
               <li>
                 <Link href="/" className="hover:text-accent transition-colors">Inicio</Link>
               </li>
@@ -60,7 +60,7 @@ export function Footer() {
           {/* Contact */}
           <div className="space-y-4">
             <h4 className="font-semibold text-lg">Contacto</h4>
-            <ul className="space-y-3 text-sm text-primary-foreground/80">
+            <ul className="space-y-3 text-sm text-white/80">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="shrink-0 mt-0.5 text-accent" />
                 <span>Calle 18 x 20,<br />Yaxkukul, Yucatán</span>
@@ -77,7 +77,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-primary-foreground/20 text-center text-xs text-primary-foreground/60 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-12 pt-8 border-t border-white/20 text-center text-xs text-white/60 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>© {new Date().getFullYear()} Hacienda San Juan de las Flores. Propuesta Demostrativa.</p>
           <div className="flex gap-4">
             <span className="cursor-pointer hover:text-white">Aviso de Privacidad (Pendiente)</span>
